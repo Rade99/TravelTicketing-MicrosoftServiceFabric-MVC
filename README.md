@@ -2,7 +2,7 @@
 This project is a multi-service web application for purchasing travel tickets, including tickets for flights, buses, and trains. Built on **Microsoft Service Fabric** using **.NET Core** services, the application utilizes **MVC with cshtml pages** for the user interface, providing a scalable and reliable platform for ticket booking.
 
 ### Key Features
-- **Ticket Purchasing:** Users can buy tickets for airplanes, buses, or trains, specifying departure and return dates if applicable.
+- **Ticket Purchasing:** Users can buy tickets for airplanes, buses, or trains, specifying departure and return dates.
 - **User Management:** Registration and login functionalities are provided, with user profiles including purchase history and linked bank accounts.
 - **Banking System:** The application tracks available funds for each user's bank account to enable secure transactions.
 - **Purchase Workflow:** Users must log in, verify funds, and check ticket availability before completing a purchase.
