@@ -1,5 +1,5 @@
 # TravelTicketing-MicrosoftServiceFabric-MVC
-This project is a multi-service web application for purchasing travel tickets, including tickets for flights, buses, and trains. Built on **Microsoft Service Fabric** using **.NET Core** services, the application utilizes **MVC with cshtml pages** for the user interface, providing a scalable and reliable platform for ticket booking.
+This project is a multi-service cloud-based web application for purchasing travel tickets, including tickets for flights, buses, and trains. Built on **Microsoft Service Fabric** using **.NET Core** services, the application utilizes **MVC with cshtml pages** for the user interface, providing a scalable and reliable platform for ticket booking.
 
 ### Key Features
 - **Ticket Purchasing:** Users can buy tickets for airplanes, buses, or trains, specifying departure and return dates.
