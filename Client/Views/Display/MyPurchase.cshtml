@@ -1,0 +1,149 @@
+﻿<style>
+    body {
+        background-image: url("https://img.freepik.com/free-photo/travel-concept-with-landmarks_23-2149153256.jpg?w=2000");
+        background-size: auto;
+    }
+
+    table {
+        background-color: snow;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: solid;
+        width: 50%;
+    }
+
+    h1 {
+        font-family: 'Maiandra GD';
+        color: snow;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 50px;
+    }
+
+    td, tr {
+        font-family: 'Maiandra GD';
+        font-size: 24px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    h3 {
+        font-family: 'Maiandra GD';
+        font-size: 30px;
+        text-align: center;
+        vertical-align: middle;
+        color: #ff1a1a;
+    }
+
+    input {
+        height: 30px;
+        text-align: center;
+        vertical-align: middle;
+        font-family: 'Times New Roman';
+        font-size: medium;
+    }
+
+        input.check {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    a {
+        color: #1cc49d;
+    }
+
+        a.option {
+            font-size: 140%;
+            padding: 3px;
+            background-color: black;
+            margin: 4px;
+        }
+
+    input[type=radio] {
+        border: 0px;
+        width: 15%;
+        height: 2em;
+    }
+
+    input.submit {
+        color: #1cc49d;
+        background-color: #1b2f31;
+        border-radius: 50px;
+        justify-content: center;
+        align-items: center;
+        height: 3em;
+        width: 8em;
+        font-size: large;
+        font-weight: 600;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    div.grid-container {
+        background-color: snow;
+        display: grid;
+        padding: 10px;
+        border-style: solid;
+        margin: 10px;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    div.grid-item {
+        font-family: 'Maiandra GD';
+        font-size: 30px;
+        text-align: center;
+        display: inline-grid;
+        background-color: cornflowerblue;
+        border-style: solid;
+        margin: 1px;
+    }
+
+</style>
+@using Common;
+
+<h1>Pregled Svih Kupovina</h1>
+<h3>@ViewData["Error"] </h3>
+
+<div class="grid-container">
+    @{
+        <div class="grid-item" style="grid-column:1; grid-row:1">
+            ID Kupovine
+        </div>
+        <div class="grid-item" style="grid-column:2; grid-row:1">
+            ID Polaska
+        </div>
+        <div class="grid-item" style="grid-column:3; grid-row:1">
+            Broj Kupljenih Karata
+        </div>
+        int r = 2;
+
+        foreach (var displayitem in ViewBag.Purchases)
+        {
+            <div class="grid-item" style="grid-column:1; grid-row:@r">
+                @displayitem.Id
+            </div>
+            <div class="grid-item" style="grid-column:2; grid-row:@r">
+                @displayitem.DepartureId
+            </div>
+            <div class="grid-item" style="grid-column:3; grid-row:@r">
+                @displayitem.TicketAmount
+            </div>
+            <div class="grid-item" style="grid-column:4; grid-row:@r">
+                <form action="~/Display/TryDeletePurchase" method="post">
+                    <input type="hidden" value="@displayitem.Id" name="id_Purchase" />
+                    <input type="submit" class="submit" value="Otkazi" />
+                </form>
+            </div>
+            r++;
+        }
+
+    }
+    <div class="grid-item" style="grid-column:1; grid-row:@r; background-color:white">
+        <a href="~/LogInRegister/Options">Opcije</a>
+    </div>
+
+</div>
+
